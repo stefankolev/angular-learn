@@ -1,0 +1,15 @@
+<button class="btn btn-primary" (click)="startEmitter()">Start</button>
+<button class="btn btn-primary" (click)="stopEmitter()">Stop</button>
+<div class="row">
+  <div class="col-md-12">
+    <app-game-controller (numberEmitter)="onEmit($event)" [gc-running]="running"></app-game-controller>
+  </div>
+  <div class="col-md-12">
+    <app-odd [inputValue]="oddValue"></app-odd>
+  </div>
+  <div class="col-md-12">
+    <app-even [inputValue]="evenValue"></app-even>
+  </div>
+</div>
+
+

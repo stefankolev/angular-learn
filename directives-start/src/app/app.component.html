@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <li
+          class="list-group-item">
+        </li>
+      </ul>
+
+      <p *appUnless="false">hideme</p>
+
+      <p appBasicHighlight> Style me with</p>
+      <p [appBetterHighlight]="'red'" defaultColor='yellow'> Style me with</p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase='5'> it is 5</p>
+        <p *ngSwitchCase='10'> it is 10</p>
+        <p *ngSwitchCase='15'> it is 15</p>
+        <p *ngSwitchDefault>it is 20</p>
+      </div>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

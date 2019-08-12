@@ -1,0 +1,41 @@
+
+<label>Server Name</label>
+<!-- <input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)" /> -->
+
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<!-- <p>{{ serverName }}</p> -->
+<button [disabled]="!allowNewServer" class="btn btn-primary"
+(click)="onCreateServer()"
+>Add new Server</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus}} </p> -->
+<app-server *ngFor="let server of servers"></app-server>
+
+<p *ngIf="serverCreated; else noServer">Server was created, server is {{ serverName }} </p>
+
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username">
+<button
+    [disabled]="checkUserEmpty()" 
+    class="btn btn-primary"
+    (click)="username = ''">
+    Reset</button>
+
+    <p></p>
+    <button
+        class="btn btn-primary"
+        (click)="toggle()"
+    >Display details</button>
+    <p *ngIf="timeStamps.length % 2 == 0 ">Secret Password = 'tuna'</p>
+    <p *ngFor="let ts of timeStamps" 
+    [ngStyle]="{backgroundColor: timeStamps.length > 5 ? 'blue': 'white' }"
+    [ngClass]="{online: timeStamps.length > 5}"
+    >logging</p>
