@@ -16,11 +16,13 @@ import { ShoppingListService } from './components/shopping-list/shopping-list.se
 import { AppRoutingModule } from './app-router.module';
 import { RecipeResolver } from './components/recipes/recipe-detail/recipe-resolver.service';
 import { RecipeService } from './components/recipes/recipe.service';
+import { RecipeStartComponent } from './components/recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    HeaderComponent, RecipesComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, RecipeListComponent, RecipeIngredientComponent, DropdownDirective
+    HeaderComponent, RecipesComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, RecipeListComponent, RecipeIngredientComponent, DropdownDirective, RecipeStartComponent, RecipeEditComponent
 
   ],
   imports: [
