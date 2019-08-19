@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ActivatedRoute, Data, Router, Params } from '@angular/router';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from '../recipes.model';
@@ -20,11 +20,11 @@ export class RecipeDetailComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.route.data.subscribe((data: Data) => { 
-      this.recipe = data['recipe'];
-      this.id= +data['id'];
-    })
 
+    this.route.params.subscribe((params: Params) => {
+      this.id = +params['id'];
+      this.recipe = this.recipeService.getRecipeById(this.id);
+    });
   }
 
   toShoppingList() { 
