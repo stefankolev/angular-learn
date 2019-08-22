@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CoreModule } from './core.module';
 import { SharedModule } from './shared/shared.module';
-import { LoggingService } from './logging.service';
+
+import {StoreModule} from '@ngrx/store';
+import { shoppingListReducer } from './components/shopping-list/store/shopping-list.reducer';
 
 
 @NgModule({
@@ -17,6 +19,9 @@ import { LoggingService } from './logging.service';
   imports: [
     BrowserModule, 
     AppRoutingModule, 
+    StoreModule.forRoot({
+      shoppingList: shoppingListReducer
+    }), 
     HttpClientModule, 
     SharedModule, 
     CoreModule
