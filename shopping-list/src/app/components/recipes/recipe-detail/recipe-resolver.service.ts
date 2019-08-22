@@ -4,7 +4,9 @@ import { Observable } from "rxjs/Observable";
 
 import { Recipe } from '../recipes.model';
 import { RecipeService } from '../recipe.service';
+import { Injectable } from '@angular/core';
 
+@Injectable({providedIn: 'root'})
 export class RecipeResolver implements Resolve<Recipe> {
     
     resolve(route: ActivatedRouteSnapshot

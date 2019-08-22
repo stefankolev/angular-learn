@@ -1,6 +1,8 @@
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable({providedIn: 'root'})
 export class ShoppingListService {
 
 
