@@ -1,11 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { Recipe } from '../recipes.model';
-import { Ingredient } from 'src/app/shared/ingredient.model';
-import { RecipeService } from '../recipe.service';
-import { Subscription } from 'rxjs';
-import * as fromApp from '../../../store/app.reducer';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import * as fromApp from '../../../store/app.reducer';
+import { Recipe } from '../recipes.model';
 
 
 @Component({
